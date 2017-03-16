@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   end
 
   def question
+  	placa = params[:placa]
   end
 end
