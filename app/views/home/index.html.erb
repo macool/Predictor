@@ -1,7 +1,8 @@
 <h1>Ingrese su placa</h1>
 <%= form_tag "/home/question", method: :get do %>
-	<%= text_field_tag :placa, nil, placeholder: "Ingresa su placa" %>
-	<%= datetime_field_tag :hora, min: "00:00:00", max: "23:59:59", step:"1" %>
+	<%= text_field_tag :placa, nil, placeholder: "Ingresa su placa", required: "true" %>
+	<%= select_tag :dia, options_for_select(["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"], disabled: ["Sabado", "Domingo"]) %>
+	<%= time_field_tag :hora %>
 	<%= content_tag :button, type: :submit do %>
 		Consultar
 	<%end%>
